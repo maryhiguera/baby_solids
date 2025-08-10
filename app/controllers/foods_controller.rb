@@ -12,6 +12,8 @@ class FoodsController < ApplicationController
   def create
     @food = Food.create(
       name: params["name"],
+      category: params["type"],
+      image_url: params["image_url"],
       min_age_months: params["min_age_months"].to_i,
       texture: params["texture"],
       ingredients: params["ingredients"],
@@ -31,9 +33,11 @@ class FoodsController < ApplicationController
 
     @food.update(
       name: params["name"] || @food.name,
+      category: params["type"] || @food.type,
+      image_url: params["image_url"] || @food.image_url,
       min_age_months: params.key?(:min_age_months) ? params[:min_age_months] : @food.min_age_months,
       texture: params["texture"] || @food.texture,
-      ingredients: params[:ingredients] ? params[:ingredients].split(",") : @food.ingredients,
+      ingredients:  params[:ingredients].split(",") || @food.ingredients,
       instructions: params["instructions"] || @food.instructions,
       is_allergen: params["is_allergen"] || @food.is_allergen
     )
