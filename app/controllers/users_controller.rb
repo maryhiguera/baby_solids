@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-    render template: "users/new"
-  end
-
+   def show
+     if current_user
+       render json: { user: current_user.as_json(except: [ :password_digest ]) }
+     else
+       render json: { error: "Not logged in" }, status: :unauthorized
+     end
+   end
 
   def create
     user = User.new(

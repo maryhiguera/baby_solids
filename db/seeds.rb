@@ -23,7 +23,7 @@ food1 = Food.create!(
   instructions: "Peel and mash ripe banana until smooth.",
   is_allergen: false,
   category: "Fruit",
-  image_url: "https://unsplash.com/photos/yellow-bananas-fczCr7MdE7U"
+  image_url: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 )
 
 food2 = Food.create!(
@@ -34,7 +34,7 @@ food2 = Food.create!(
   instructions: "Cut avocado, remove seed, and mash until smooth.",
   is_allergen: false,
   category: "Fruit",
-  image_url: "https://unsplash.com/photos/sliced-avocado-fruit-on-brown-wooden-table-cueV_oTVsic"
+  image_url: "https://images.unsplash.com/photo-1601039641847-7857b994d704?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 )
 
 food3 = Food.create!(
@@ -45,7 +45,7 @@ food3 = Food.create!(
   instructions: "Steam carrots until soft and cut into sticks.",
   is_allergen: false,
   category: "Vegetable",
-  image_url: "https://unsplash.com/photos/3-carrots-on-brown-wooden-table-R198mTymEFQ"
+  image_url: "https://images.unsplash.com/photo-1639427444459-85a1b6ac2d68?q=80&w=1588&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 )
 
 food4 = Food.create!(
@@ -56,7 +56,7 @@ food4 = Food.create!(
   instructions: "Serve a small amount of smooth peanut butter.",
   is_allergen: true,
   category: "Nut",
-  image_url: "https://unsplash.com/photos/a-jar-filled-with-peanut-butter-next-to-a-spoon-T4bjtflYYe4"
+  image_url: "https://plus.unsplash.com/premium_photo-1701210417955-d1b61e1dc9eb?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 )
 
 # Food Logs

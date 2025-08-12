@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_10_203440) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_12_015904) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -19,6 +19,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_10_203440) do
     t.date "birthdate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "food_logs", force: :cascade do |t|
@@ -28,6 +29,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_10_203440) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -49,5 +51,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_10_203440) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
   end
 end

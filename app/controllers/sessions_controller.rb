@@ -1,9 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-   render template: "sessions/new"
- end
-
-
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])

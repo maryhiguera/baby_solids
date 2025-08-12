@@ -1,18 +1,19 @@
 class BabiesController < ApplicationController
   def index
     @babies = Baby.all
-    render json: @babies
+    render :index
   end
 
   def show
     @baby = Baby.find(params[:id])
-    render json: @baby
+    render :show
   end
 
   def create
     @baby = Baby.create(
       name: params["name"],
-      birthdate: params["birthdate"]
+      birthdate: params["birthdate"],
+      user_id: current_user.id
     )
 
     if @baby.valid?

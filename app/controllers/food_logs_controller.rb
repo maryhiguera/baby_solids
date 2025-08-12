@@ -1,12 +1,13 @@
 class FoodLogsController < ApplicationController
   def index
-    @food_logs = FoodLog.all
-    render json: @food_logs
+    puts current_user
+    @food_logs = current_user.food_logs
+    render :index
   end
 
   def show
     @food_log = FoodLog.find(params[:id])
-    render json: @food_log
+    render :show
   end
 
   def create
@@ -14,7 +15,8 @@ class FoodLogsController < ApplicationController
       baby_id: params[:baby_id],
       food_id: params[:food_id],
       reaction: params[:reaction],
-      notes: params[:notes]
+      notes: params[:notes],
+      user_id: current_user.id
     )
 
     if @food_log.valid?

@@ -1,12 +1,12 @@
 class FoodsController < ApplicationController
   def index
     @foods = Food.all
-    render json: @foods
+    render :index
   end
 
   def show
     @food = Food.find(params[:id])
-    render json: @food
+    render :show
   end
 
   def create
@@ -22,7 +22,7 @@ class FoodsController < ApplicationController
     )
 
     if @food.valid?
-      render json: @food
+      render :show
     else
       render json: { errors: @food.errors.full_messages }, status: :unprocessable_entity
     end

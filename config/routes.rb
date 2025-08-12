@@ -17,10 +17,8 @@ Rails.application.routes.draw do
   patch "/food_logs/:id" => "food_logs#update"
   delete "/food_logs/:id" => "food_logs#destroy"
 
-  get "/signup" => "users#new"
-  post "/users" => "users#create"
-
-  get "/login" => "sessions#new"
-  post "/sessions" => "sessions#create"
-  get "/logout" => "sessions#destroy"
+  post "/signup" => "users#create"
+  get "/users/:id" => "users#show"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
 end
