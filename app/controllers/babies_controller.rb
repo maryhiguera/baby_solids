@@ -1,6 +1,7 @@
 class BabiesController < ApplicationController
+  before_action :authenticate_user
   def index
-    @babies = Baby.all
+    @babies = current_user.babies
     render :index
   end
 
@@ -10,14 +11,14 @@ class BabiesController < ApplicationController
   end
 
   def create
-    @baby = Baby.create(
+    @baby = current_user.babies.create(
       name: params["name"],
       birthdate: params["birthdate"],
       user_id: current_user.id
     )
 
     if @baby.valid?
-      render json: @baby
+      render :show
     else
       render json: { errors: @baby.errors.full_messages }, status: :unprocessable_entity
     end
@@ -31,7 +32,7 @@ class BabiesController < ApplicationController
     )
 
     if @baby.valid?
-      render json: @baby
+      render :show
     else
       render json: { errors: @baby.errors.full_messages }, status: :unprocessable_entity
     end

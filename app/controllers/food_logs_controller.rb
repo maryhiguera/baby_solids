@@ -1,4 +1,5 @@
 class FoodLogsController < ApplicationController
+  before_action :authenticate_user
   def index
     puts current_user
     @food_logs = current_user.food_logs
@@ -20,7 +21,7 @@ class FoodLogsController < ApplicationController
     )
 
     if @food_log.valid?
-      render json: @food_log
+      render :show
     else
       render json: { errors: @food_log.errors.full_messages }, status: :unprocessable_entity
     end
@@ -37,7 +38,7 @@ class FoodLogsController < ApplicationController
     )
 
     if @food_log.valid?
-      render json: @food_log
+      render :show
     else
       render json: { errors: @food_log.errors.full_messages }, status: :unprocessable_entity
     end

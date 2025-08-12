@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_admin, except: [ :index, :show ]
   def index
     @foods = Food.all
     render :index
@@ -43,7 +44,7 @@ class FoodsController < ApplicationController
     )
 
     if @food.valid?
-      render json: @food
+      render :show
     else
       render json: { errors: @food.errors.full_messages }, status: :unprocessable_entity
     end
