@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get "/users/:id" => "users#show"
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
+  get "/me" => "users#me"
+  get "/dashboard_data" => "users#dashboard_data"
 end

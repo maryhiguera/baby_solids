@@ -34,7 +34,7 @@ class FoodsController < ApplicationController
 
     @food.update(
       name: params["name"] || @food.name,
-      category: params["type"] || @food.type,
+      category: params["category"] || @food.category,
       image_url: params["image_url"] || @food.image_url,
       min_age_months: params.key?(:min_age_months) ? params[:min_age_months] : @food.min_age_months,
       texture: params["texture"] || @food.texture,
